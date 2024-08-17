@@ -5,5 +5,7 @@ public interface ContaEssencial {
 
     public String getNumeroConta();
 
+    public String toString();
+
     
 }

@@ -6,6 +6,8 @@ public class Agencia {
     private List<ContaEssencial> contasEssenciais = new ArrayList<>();
     private List<ContaRentavel> contasRentaveis = new ArrayList<>();
 
+    
+
     public Agencia(String numero) {
       this.numero = numero;
     }
@@ -49,5 +51,31 @@ public class Agencia {
        throw new ContaException("Numero da conta "+numeroConta+" não existe");
     }
 
+
+    public void getExtratoConta(String numeroConta) throws ContaException {
+      for (ContaEssencial contaEssencial : contasEssenciais) {
+         if (contaEssencial.getNumeroConta().equals(numeroConta)) {
+            System.out.println(contaEssencial);
+         }
+      }
+      
+      for (ContaRentavel contaRentavel: contasRentaveis) {
+        if (contaRentavel.getNumeroConta().equals(numeroConta)) {
+            System.out.println(contaRentavel);
+        }
+     }
+    }
+
+   public String getNumero() {
+      return numero;
+   }
+
+   public List<ContaEssencial> getContasEssenciais() {
+      return contasEssenciais;
+   }
+
+   public List<ContaRentavel> getContasRentaveis() {
+      return contasRentaveis;
+   }
 }
      

@@ -23,7 +23,7 @@ public class ContaPoupanca implements ContaRentavel {
             if (this.saldo >= valor) {
                this.saldo -= valor;
             } else {
-               throw new ContaException("Conta sem saldo suficiente: "+this.saldo);
+               throw new ContaException("Conta poupanca sem saldo suficiente: "+this.saldo);
             }
          } else {
                throw new ContaException("Valor inválido para saque "+valor);
@@ -43,4 +43,11 @@ public class ContaPoupanca implements ContaRentavel {
     public String getNumeroConta() {
         return numeroConta;
     }
+
+    @Override
+    public String toString() {
+        return "ContaPoupanca [agencia=" + agencia.getNumero() + ", numeroConta=" + numeroConta + ", saldo=" + saldo + "]";
+    }
+
+    
 }
